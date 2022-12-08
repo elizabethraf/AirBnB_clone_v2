@@ -5,16 +5,13 @@ from sqlalchemy import Column, String
 from sqlalchemy.orm import relationship
 from models.review import Review
 from models.place import Place
+import models
+from os import getenv
+import sqlalchemy
+
 
 class User(BaseModel):
     """This class defines a user by various attributes"""
-
-    email = ''
-    password = ''
-    first_name = ''
-    last_name = ''
-
-    else:
         __tablename__ = 'users'
         email = Column(String(128), nullable=False)
         password = Column(String(128), nullable=False)
@@ -22,3 +19,9 @@ class User(BaseModel):
         last_name = Column(String(128), nullable=True)
         places = relationship("Place", backref="user")
         reviews = relationship("Review", backref="user"
+
+        else:
+            email = ' '
+            pswd = ' '
+            first_name = ' '
+            last_name = ' '
