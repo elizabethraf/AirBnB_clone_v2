@@ -22,9 +22,9 @@ def index():
     return "HBNB"
 
 
-@app.route('/c/<text>', strict_slashes=False)
+@app.route('/c/<string:text>', strict_slashes=False)
 def text():
-    """Display “C”  """
+    """Display “C”  with text"""
 
     return "C {}".format(text.replace('_', ' '))
 
