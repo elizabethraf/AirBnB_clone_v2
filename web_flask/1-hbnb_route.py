@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+Display flask web application
+
+"""
 
 from flask import Flask
 
@@ -7,7 +11,7 @@ app.config["JSONIFY_PRETTYPRINT_REGULAR"] = False
 app.url_map.strict_slashes = False
 
 @app.route("/", methods=["GET"])
-def index():
+def hello():
     return "Hello HBNB!"
 
 @app.route("/hbnb", methods=["GET"])
