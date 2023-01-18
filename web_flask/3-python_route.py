@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
 Display scriopt that start a flask web application
+
 """
 
 from flask import Flask
@@ -27,6 +28,14 @@ def text():
     """Display “C”  with text"""
 
     return "C {}".format(text.replace('_', ' '))
+
+
+@app.route("/python", strict_slashes=False)
+@app.route("/python/<text>", strict_slashes=False)
+def pythonText(text="is_cool"):
+    """Display “Python ”  <text> variable"""
+
+    return "Python {}".format(text.replace("_", " "))
 
 
 if __name__ == '__main__':
